@@ -37,15 +37,29 @@
 
     <div class="container mt-4">
         <div class="card" >
-            <img src="..." class="card-img-top" alt="...">
+            <div class="card-header">
+                Login Form
+            </div>
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <form action="/auth/login" method="POST">
+                  
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-Mail</label>
+                        <input type="email" class="form-control" id="email" name="email">
+                    </div>
+                    <div class="mb-3 f">
+                        <label for="password" >Password</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                   
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
             </div>
         </div>
-
+    {{#if message}}
+    <h4 class="alert alert-danger mt-4">{{message}}</h4>
+    {{/if}}
     </div>
 </body>
 
