@@ -24,12 +24,21 @@
             <li>
                 <a href="/">Home</a>
             </li>
+            {{#if user}}
+             <li>
+                <a href="/profile">Profile</a>
+            </li>
+            <li>
+                <a href="/auth/logout">Log-Out</a>
+            </li>
+            {{else}}
             <li>
                 <a href="/login">Login</a>
             </li>
             <li>
                 <a href="/register">Register</a>
             </li>
+            {{/if}}
 
         </ul>
 

@@ -2,6 +2,7 @@ const express =  require ("express");
 const mysql = require("mysql");
 const path = require("path");
 const res = require("express/lib/response");
+const cookieParser= require("cookie-parser");
 
 const app= express();
 const dotenv= require('dotenv');
@@ -22,6 +23,7 @@ app.use(express.static(publicDirectory));
 //parse url encoded bodies
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
+app.use(cookieParser());
 
 app.set('view engine','hbs');
 db.connect((error)=>{
